@@ -7,12 +7,17 @@ $nomeFilme = "Top Gun - Maverick";
 $anoLancamento = 2022; 
 
 $quantidadeDeNotas = $argc - 2;
-$somaDeNotas = 0;
+$notas = [];
 
-//Uma das formas de se conseguir somar as notas do filme -  solução mais interessante nesse caso
+//1º forma de se conseguir somar as notas do filme -  solução mais interessante nesse caso
 for ($contador = 1; $contador < $argc; $contador += 1) {
-   $somaDeNotas += $argv[$contador];
+   $notas[] = (float) $argv[$contador];
 }
+
+//$somaDeNotas = 0;
+//foreach ($notas as $nota) {
+//    $somaDeNotas += $notas;
+//}
 
 //2º forma de se conseguir somar as notas do filme
 //$contador = 1;
@@ -25,7 +30,7 @@ for ($contador = 1; $contador < $argc; $contador += 1) {
 
 //} while();
 
-$notaFilme = $somaDeNotas / $quantidadeDeNotas;
+$notaFilme =array_sum($notas) / $quantidadeDeNotas;
 $planoPrime = true;
 
 $incluidoNoPlano = $planoPrime || $anoLancamento < 2020;//boolean
@@ -53,4 +58,12 @@ $genero = match ($nomeFilme) {
 
 echo "O gênero do filme é: $genero\n";
 
-echo $argc;
+$filme = [
+    "nome" => "Thor: Ragnarok",
+    "ano" => 2021,
+    "nota" => 7.8,
+    "super-herói",
+];
+
+echo $filme ['ano'];
+
