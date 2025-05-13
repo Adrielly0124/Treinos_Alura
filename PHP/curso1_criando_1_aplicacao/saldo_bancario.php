@@ -55,6 +55,8 @@ do {
         }
 } while ($opcao != 4);
 
+
+//Mesmo resultado, porém utilizando uma função 
 //function exibirMenu($saldo, $titular) {
 //    echo "******************\n";
 //    echo "Titular: $titular\n";
