@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . "/funcoes.php";
+require __DIR__ . "/src/funcoes.php";
 
 echo "Bem vindo(a) ao Screen Match!\n"; //quebra de linha
 
@@ -37,12 +37,12 @@ $genero = match ($nomeFilme) {
 
 echo "O gênero do filme é: $genero\n";
 
-$filme = [
-    "nome" => "Thor: Ragnarok",
-    "ano" => 2021,
-    "nota" => 7.8,
-    "super-herói",
-];
+$filme = criaFilme(
+    nome:"Thor: Ragnarok", 
+    anoLancamento: 2021, 
+    nota: 7.8, 
+    genero: "super-herói"
+);
 
 echo $filme ['ano'];
 
@@ -57,3 +57,7 @@ $posicaoDoisPontos = strpos($filme['nome'], ':');
 var_dump($posicaoDoisPontos);
 
 var_dump(substr($filme['nome'], 0, $posicaoDoisPontos));
+
+var_dump(json_decode('{"nome":"Thor: Ragnarok","ano":2021,"nota":7.8,"0":"super-her\u00f3i"}', true));
+$filmeComoStringJson = json_encode($filme);
+file_put_contents(__DIR__ . '/filme.json', $filmeComoStringJson);
