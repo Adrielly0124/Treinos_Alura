@@ -1,0 +1,42 @@
+body {
+    background-color: black;
+    color: #f6f6f6;
+}
+strong {
+    color: #22D4FD;
+}
+
+h1{
+    font-weight: bold;
+}
+ 
+span{
+    color: #22D4FD;
+    border: 1px solid #22D4FD;
+    padding: 10px;
+}
+
+/* Desafio 1
+body {
+    background-color: #suaCorPrincipal;
+}
+h1 {
+    color: #suaCorSecundária1;
+}
+p {
+    color: #suaCorSecundária2;
+}
+
+Desafio 2
+body {
+    background-color: #000000;
+    color: #F6F6F6;
+}
+
+Desafio 3
+body {
+    background-color: #FF5733; 
+    color: #00FF00; 
+}
+
+*/
