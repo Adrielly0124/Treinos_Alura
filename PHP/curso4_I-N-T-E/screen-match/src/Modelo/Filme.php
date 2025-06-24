@@ -10,7 +10,8 @@ class Filme extends Titulo {
         ) {
             parent ::__construct($nome, $anoLancamento, $genero); //estamos inicializando a classe pai Titulo
         }
-
+        
+        #[Override]
         public function duracaoEmMinutos(): int {
             return $this->duracaoEmMinutos;
         }
