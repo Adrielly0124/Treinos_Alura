@@ -1,14 +1,25 @@
 <?php
 
-require __DIR__ . "src/Modelo/ComAvaliacao.php";
-require __DIR__ . "/src/Modelo/Avaliavel.php";
-require __DIR__ . "/src/Modelo/Genero.php";
-require __DIR__ . "/src/Modelo/Titulo.php";
-require __DIR__ . "/src/Modelo/Episodio.php";
-require __DIR__ . "/src/Modelo/Serie.php";
-require __DIR__ . "/src/Modelo/Filme.php";
-require __DIR__ . "/src/Calculos/CalculadoraDeMaratona.php";
-require __DIR__ . "/src/Calculos/ConversorNotaEstrela.php";
+require 'autoload.php';
+spl_autoload_register(function (string $className) {
+    $caminho = str_replace('ScreenMatch', '/src', $className) . '.php';
+    $caminho = str_replace('\\', DIRECTORY_SEPARATOR, $caminho);
+    require_once __DIR__ . DERECTORY_SEPARATOR . $caminho;
+    var_dump($caminho);
+});
+
+use ScreenMatch\Modelo\{
+    Genero,
+    Filme,
+    Serie,
+    Episodio,
+    Titulo
+};
+
+use ScreenMatch\Calculos\{
+    CalculadoraDeMaratona,
+    ConversorNotaEstrela
+};
 
 echo "Bem-vindo(a) ao ScreenMatch\n";
 
